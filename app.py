@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import seaborn as sns
-
+import io
 
 st.title("Analizador de datos")
 
@@ -333,6 +333,13 @@ else:
         ax.axis('off')
         st.write("Gráfico importancia de variables:")
         st.pyplot(fig)
+
+        final_model = finalize_model(best_model)
+        output_model = pickle.dumps(final_model)
+        b64 = base64.b64encode(output_model).decode()
+
+        href = f'<a href="data:file/output_model;base64,{b64}" download="modelo_entrenado.pkl">Descargar modelo entrenado</a>'
+        st.markdown(href, unsafe_allow_html=True)
 
 
 
