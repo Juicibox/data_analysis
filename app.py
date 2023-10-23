@@ -145,7 +145,7 @@ if data_file is not None:
         mensaje = st.empty()
         mensaje.warning('Generando...Espere por favor.')
 
-        best_model = compare_models()
+        best_model = compare_models(include = ['lr', 'dt', 'lightgbm', 'lar','xgboost'])
         mensaje.success('Listo')
         summary_model = pull()
         st.write("Resumen de modelos:")
