@@ -180,7 +180,7 @@ else:
     # Aquí carga tu ejemplo predeterminado como un DataFrame de pandas
     # Por ejemplo:
     res_columnas = ['ColumnaA', 'ColumnaB', 'ColumnaC']
-    data = pd.DataFrame(np.random.randint(0,100,size=(100, 3)), columns=res_columnas)
+    data = pd.DataFrame(np.random.randint(0,100,size=(40, 3)), columns=res_columnas)
     data['Target'] = data['ColumnaA'] + 2*data['ColumnaB'] - data['ColumnaC']
     data.loc[1, 'ColumnaB'] = np.nan
     data.loc[5, 'ColumnaC'] = np.nan
