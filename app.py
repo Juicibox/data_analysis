@@ -335,10 +335,11 @@ else:
         st.pyplot(fig)
 
         final_model = finalize_model(best_model)
-        output_model = pickle.dumps(final_model)
-        b64 = base64.b64encode(output_model).decode()
+        save_model(final_model, 'modelo_final')
+        with open('modelo_final.pkl', 'rb') as f:
+            model_data = f.read()
 
-        st.download_button(label="Descargar modelo entrenado",data=b64,file_name="modelo_entrenado.pkl",mime="application/octet-stream")
+        st.download_button(label="Descargar modelo entrenado",data=model_data,file_name="modelo_final.pkl",mime="application/octet-stream")
 
 
 
