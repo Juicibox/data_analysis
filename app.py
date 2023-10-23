@@ -218,8 +218,7 @@ else:
     st.dataframe(data)
     # filas y columnas
     filas, columnas = data.shape
-    st.write(f"Número de filas: {filas}. "
-             f"Número de columnas: {columnas}")
+    st.write(f"**Número de filas:** {filas}.<br>**Número de columnas:** {columnas}", unsafe_allow_html=True)
     # valores nulos
     null = data.isnull().sum()
     null = pd.DataFrame(null, columns=["TotalNulos"])
