@@ -129,7 +129,7 @@ if data_file is not None:
             st.pyplot(fig)
 
     if Pred:
-        st.write("Predicción")
+        st.subheader("Predicción")
         models = st.sidebar.selectbox("Seleccione el tipo", ("Regresión", "Clasificación"))
         if models == "Regresión":
             from pycaret.regression import *
@@ -167,6 +167,11 @@ if data_file is not None:
         st.pyplot(fig)
 
         final_model = finalize_model(best_model)
+        save_model(final_model, 'modelo_final')
+        with open('modelo_final.pkl', 'rb') as f:
+            model_data = f.read()
+
+        st.download_button(label="Descargar modelo entrenado",data=model_data,file_name="modelo_final.pkl",mime="application/octet-stream")
 
 
 
@@ -296,7 +301,7 @@ else:
 
 
     if Pred:
-        st.write("Predicción")
+        st.subheader("Predicción")
 
         models = st.sidebar.selectbox("Seleccione el tipo", ("Regresión", "Clasificación"))
         if models == "Regresión":
