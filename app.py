@@ -318,7 +318,7 @@ else:
         mensaje = st.empty()
         mensaje.warning('Generando...Espere por favor.')
 
-        best_model = compare_models()
+        best_model = compare_models(exclude = ['lr', 'dt', 'lightgbm', 'dt', 'omp','dummy','ada','et'])
         mensaje.success('Listo')
         summary_model = pull()
         st.write("Resumen de modelos:")
