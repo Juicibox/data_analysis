@@ -318,4 +318,21 @@ else:
         summary_model = pull()
         st.write("Resumen de modelos:")
         st.write(summary_model.head())
+        
+        plot_model(best_model, verbose=False, save=True)
+        fig, ax = plt.subplots()
+        img = plt.imread('Residuals.png')
+        ax.imshow(img)
+        ax.axis('off')
+        st.write("Gráfico residuales:")
+        st.pyplot(fig)
+        plot_model(best_model, plot='feature', verbose=False, save=True)
+        fig, ax = plt.subplots()
+        img = plt.imread('Feature Importance.png')
+        ax.imshow(img)
+        ax.axis('off')
+        st.write("Gráfico importancia de variables:")
+        st.pyplot(fig)
+
+
 
