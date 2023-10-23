@@ -338,8 +338,7 @@ else:
         output_model = pickle.dumps(final_model)
         b64 = base64.b64encode(output_model).decode()
 
-        href = f'<a href="data:file/output_model;base64,{b64}" download="modelo_entrenado.pkl">Descargar modelo entrenado</a>'
-        st.markdown(href, unsafe_allow_html=True)
+        st.download_button(label="Descargar modelo entrenado",data=b64,file_name="modelo_entrenado.pkl",mime="application/octet-stream")
 
 
 
