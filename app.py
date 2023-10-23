@@ -309,7 +309,7 @@ else:
         exp = setup(data=data, target=target, index=False)
         summary_tab = pull()
         st.write("Tabla resumen:")
-        st.write(exp)
+        st.write(summary_tab)
         mensaje = st.empty()
         mensaje.text('Generando...')
 
