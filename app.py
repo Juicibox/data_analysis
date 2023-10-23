@@ -127,7 +127,7 @@ if data_file is not None:
             fig, ax = plt.subplots()
             sns.heatmap(correlation, annot=True, ax=ax,  fmt='.2f', cmap="YlGnBu")
             st.pyplot(fig)
-
+    st.info("Antes de usar predicción, hacer limpieza de datos.")
     if Pred:
         st.subheader("Predicción")
         models = st.sidebar.selectbox("Seleccione el tipo", ("Regresión", "Clasificación"))
@@ -299,7 +299,7 @@ else:
             sns.heatmap(correlation, annot=True, ax=ax, fmt='.2f', cmap="YlGnBu")
             st.pyplot(fig)
 
-
+    st.info("Antes de usar predicción, hacer limpieza de datos.")
     if Pred:
         st.subheader("Predicción")
 
