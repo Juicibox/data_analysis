@@ -6,7 +6,7 @@ import matplotlib.ticker as ticker
 import seaborn as sns
 import io
 
-st.set_page_config(page_title="Img to Text", page_icon="logo.png")
+st.set_page_config(page_title="Data analyst ", page_icon="logo.png")
 
 st.title("Analizador de datos")
 
